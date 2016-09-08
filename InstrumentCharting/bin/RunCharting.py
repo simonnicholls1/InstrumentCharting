@@ -1,5 +1,5 @@
-from bin.QuandlDataProvider import QuandlDataProvider
-from bin.Charting import Charting
+from QuandlDataProvider import QuandlDataProvider
+from Charting import Charting
 import argparse
 
 #Setup arguments
