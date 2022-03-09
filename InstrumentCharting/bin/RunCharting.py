@@ -40,8 +40,10 @@ threads = []
 for instrument in instruments:
     try:
         print("Obtaining data for instrument identifier: " + instrument)
-        instrument_values = QDP.get_instrument_value(instrument, start_date, end_date, rolling_window)
+        instrument_values, instrument_monthly_values =\
+            QDP.get_instrument_value(instrument, start_date, end_date, rolling_window)
         CP.plot_graph(instrument, instrument_values)
+        CP.print_table(instrument, instrument_monthly_values)
     except Exception as ex:
         print("Error getting data for instrument: " + instrument + "Error: " + str(ex))
 
